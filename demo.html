@@ -62,70 +62,108 @@ C’est parti,accrochez-vous !
 
 				<!-- Example of nested vertical slides -->
 				<section>
-					<section>
-						<h2>1- INSTALLATION DE POSTGRESQL</h2>
-						<p>Commençons par l’ajout de nouveau repository pour faciliter l’installation d’une version récente de pg.</p>
-						<p>$ sudo sh -c "echo 'deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main'
-> /etc/apt/sources.list.d/pgdg.list"</p><br>
-<p>ensuite :</p><br>
-<p>$ wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | sudo aptkey
-add -</p>
+					<section data-markdown>
+					
+						<script type="text/template">
+							1- INSTALLATION DE POSTGRESQL
+						
+							Commençons par l’ajout de nouveau repository pour faciliter l’installation d’une version récente de pg.
+
+						
+						$ sudo sh -c "echo 'deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main'> /etc/apt/sources.list.d/pgdg.list"
+						
+					
+						ensuite :
+
+						
+						$ wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | sudo aptkey add -
+						
+
+						
+					</script><br>
 
 						<br>
 						<a href="#" class="navigate-down">
 							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
 						</a>
 					</section>
-					<section>
-						<h2>MISE A JOUR DES PACQUETS</h2>
+					<section data-markdown>
+						
+						<script type="text/template">
+							<h2>MISE A JOUR DES PACQUETS</h2>
 						<p>Puis, mettons à jour la liste des paquets :</p><br>
-						<p>$ sudo apt-get update</p><br>
+							```
+							$ sudo apt-get update
+							```
+
+							<br>
 						<p>
-Et un peu de mise a niveau des paquets installés :</p><br><p>
-$ sudo apt-get upgrade</p>
+Et un peu de mise a niveau des paquets installés :</p><br>
+						
+						$ sudo apt-get upgrade
+
+
+						
+						</script>
+						
 					</section>
-					<section>
+					<section data-markdown>
+						<script type="text/template">
 						<h2>INSALLATION PROPREMENT DE POSTGRESQL</h2>
 						<p>Maintenant nous pouvons installer proprement Postgresql 9.5</p>
 						<br>
-						<p>$ sudo apt-get install postgresql-common</p><br><p>
-$ sudo apt-get install postgresql-9.5 libpq-dev</p>
+						```
+						$ sudo apt-get install postgresql-common
+						```
+						
+```
+$ sudo apt-get install postgresql-9.5 libpq-dev```
 						<a href="#/2">
 							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
 						</a>
+						</script>
 					</section>
 				</section>
 
-				<section>
-					<h2>CREATION DE NOUVEAU ROLE POUR POSTGESQL</h2>
-					<p>Ça y est,postgresql est installé.Il ne nous suffit juste d’ajouter un nouveau rôle(a vraix dire c’est
+				<section data-markdown>
+					<script type="text/template">
+						CREATION DE NOUVEAU ROLE POUR POSTGESQL
+						Ça y est,postgresql est installé.Il ne nous suffit juste d’ajouter un nouveau rôle(a vraix dire c’est
 vous).Sachez que c’est Postgres qui joue le rôle par defaut une fois postgresql installé.Donc pour créer un
 nouveau rôle, on tape la commande suivante dans le terminal :
-					</p><br>
-					<p>$ sudo -u postgres createuser --interactive</p><br>
-					<p>du coup le drapeau --interactive vous demande les informations nécéssaires . A la place de nom, donnez lui
-le nom que vous utilisez lors de connexion sur votre ordi et c’est tout !</p>
-
+						
+						```
+						$ sudo -u postgres createuser --interactive
+						```
+						du coup le drapeau --interactive vous demande les informations nécéssaires . A la place de nom, donnez lui
+le nom que vous utilisez lors de connexion sur votre ordi et c’est tout !
+					</script>
 				</section>
 
-				<section>
-					<h2>1- UTILISATION DE POSTGRESQL EN DEVELOPPEMENT ET TEST SUR UN PROJET RAILS</h2>
-					<p>
-						Maintenant que nous avons postgresql en main,nous ne sommes plus borné de Sqlite3.
-Commençons par créer un new projet rails avec postgresql .
-Ouvrons le terminal et tapons la commande :</p>
-					<p>
-						$ rails new RoRPostgres -d postgresql</p>
-				</section>
-
-				<section>
+				<section data-markdown>
+					<script type="text/template">
+					1- UTILISATION DE POSTGRESQL EN DEVELOPPEMENT ET TEST SUR UN PROJET RAILS
 					
-					<p>En gros, le -d permet de specifier la base de données utilisée(dans notre cas c’est Postgresql).Cette
-commande est equivalente de :</p><br>
-<p>$ rails newRoRPostgres --database=postgresql</p><br>
-<p>Si vous l’omettez, ce sera Sqlite3 votre base de données parce que c’est lui qui est par défaut de Ruby on
+					Maintenant que nous avons postgresql en main,nous ne sommes plus borné de Sqlite3.
+Commençons par créer un new projet rails avec postgresql .
+Ouvrons le terminal et tapons la commande :
+					```
+					$ rails new RoRPostgres -d postgresql
+					```
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+						En gros, le -d permet de specifier la base de données utilisée(dans notre cas c’est Postgresql).Cette
+commande est equivalente de :
+						```
+						$ rails newRoRPostgres --database=postgresql
+						```
+						Si vous l’omettez, ce sera Sqlite3 votre base de données parce que c’est lui qui est par défaut de Ruby on
 Rails.
-Puis, un petit cd vers notre projet :</p>
+						Puis, un petit cd vers notre projet :
+					</script>
 				</section>
 
 				<section data-markdown>
@@ -227,11 +265,10 @@ ou pas … Si vous avez des questions contactez moi sur slack @Fetra :)</p>
 				</section>
 				<section>
 					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
+						<h2>PG et RAILS</h2>
+						<p class="fragment">... installation de pg ...</p>
+						<p class="fragement">creation de nouveau rôle</p>
+<!-- 
 						<aside class="notes">
 							This slide has fragments which are also stepped through in the notes window.
 						</aside>
@@ -260,7 +297,7 @@ ou pas … Si vous avez des questions contactez moi sur slack @Fetra :)</p>
 						<a href="?transition=zoom#/transitions">Zoom</a>
 					</p>
 				</section>
-
+ -->
 				<section id="themes">
 					<h2>Themes</h2>
 					<p>
